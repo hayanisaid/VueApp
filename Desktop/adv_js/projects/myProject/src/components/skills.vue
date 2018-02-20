@@ -12,7 +12,15 @@
     <h3>IF statement in vue</h3>
     <p v-if="skills.length>=1">you have more than 1 skill</p>
     <p v-else>You have no skill Bro</p>
+
+   <h3>v-bind to bind attribute such class </h3>
+   <div v-bind:class="{alert:bindme,'addAnotherClass':showClass}">add class bindme if true</div>
+   <h2 >bind with object of class</h2>
+   <div v-bind:class="objectbinding">add multiple class</div>
   </div>
+
+  <!-- <h3>Style bingind <strong>v-bnid:style={}</strong></h3>
+  <div v-bind:style="{ backgroundColor : bgColor , width: bgWidth}">Style bind</div> -->
 </template>
 
 <script>
@@ -32,14 +40,29 @@ export default {
        ],
        changeName:function(){
         alert("hi there")
-       }
+       },
+       /*class binding*/
+       bindme:true,
+       showClass:true,
+
+       /*class binding*/
+       objectbinding:{
+        active:true,
+        inactive:true
+       },
+
+       /*Style binding*/
+       bgColor:"yellow",
+       bgWidth:"400px"
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<!-- We can use an external css file using src attrbbute -->
+<!-- Scoped used to make style specified to a component -->
+<style scoped >
 h1, h2 {
   font-weight: normal;
 }
@@ -53,5 +76,24 @@ li {
 }
 a {
   color: #42b983;
+}
+.alert{
+  background:red;
+  width: 200px;
+  height: 30px;
+  color: #fff;
+  margin: 0 auto;
+}
+.addAnotherClass{
+  border:4px solid black;
+}
+.active{
+  background: #f4f4f4;
+
+
+}
+.inactive{
+  border:2px solid;
+  width: 40px;
 }
 </style>
