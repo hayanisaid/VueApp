@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    
+    <nav>
+      <router-link to="/">home</router-link>
+      <router-link to="/about">about</router-link>
+    </nav>
     <router-view/>
   </div>
 </template>
@@ -19,5 +22,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+nav a{
+  background: #fff;
+  color:#666;
 }
 </style>
